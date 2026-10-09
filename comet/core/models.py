@@ -1220,6 +1220,7 @@ VALID_DEBRID_SERVICES = [
     "debridlink",
     "offcloud",
     "pikpak",
+    "kizaru",
 ]
 
 
