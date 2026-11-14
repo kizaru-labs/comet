@@ -32,9 +32,11 @@ permissions:
   packages: write
 
 env:
-  # Was g0ldyy/comet upstream. A fork cannot push to the upstream owner's
-  # namespace, so the build failed at the push step with a permission error.
-  IMAGE_NAME: mohamediburan/comet
+  # Was g0ldyy/comet upstream, then a literal mohamediburan/comet. A fork
+  # cannot push to another owner's namespace and GITHUB_TOKEN only writes its
+  # own owner's, so a hardcoded owner fails the push after any ownership move.
+  # Derived from the repository instead: it is `kizaru-labs/comet` today.
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build-and-push:
